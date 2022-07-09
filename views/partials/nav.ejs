@@ -1,0 +1,21 @@
+<div class="container">
+    <nav>
+        <div class="nav row">
+            <% var nav = [
+                ['Strona główna', '/'],
+                ['Oferta', '/oferta'],
+                ['Galeria', '/galeria'],
+                ['Wynajem', '/wynajem'],
+                ['Kontakt', '/kontakt']
+            ] %>
+            <% for(i=0; i<nav.length; i++) { %>
+                <a href="<%- nav[i][1] %>" class="col link transition <% if(pageName==nav[i][0]) { %> selected <% } %>">
+                    <span><%- nav[i][0] %></span>
+                </a>
+            <% } %>
+            <a href="sklep" class="col link transition shop-link">
+                <span><i class="fa-solid fa-basket-shopping"></i> SKLEP</span>
+            </a>
+        </div>
+    </nav>
+</div>

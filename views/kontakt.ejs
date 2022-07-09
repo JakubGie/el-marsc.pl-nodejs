@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+    <head>
+        <title><%- pageName %> - El-Mar S.C.</title>
+
+        <meta property="og:title" content="<%- pageName %>">
+		<meta property="og:url" content="https://el-marsc.pl/kontakt">
+
+        <%- include('./partials/head') %>
+    </head>
+
+    <body>
+        <%- include('./partials/header') %>
+
+        <div class="position-relative">
+
+
+            <%- include('./partials/nav') %>
+            
+    
+            <div class="main w-100">
+                <main>
+                    <div class="h-back">
+                        <h1>
+                            <%- pageName %>
+                        </h1>
+                    </div>
+
+
+                    <div class="container py-5">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d632.0619411343727!2d22.761212829264615!3d50.678225848543626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa5e80ac9f831c145!2zNTDCsDQwJzQxLjYiTiAyMsKwNDUnNDIuMyJF!5e0!3m2!1spl!2spl!4v1654536402598!5m2!1spl!2spl" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <h2 class="section-header">Kontakt</h2>
+                        <div class="hr"></div>
+                        <div class="contact">
+                            <div class="row">
+                                <div class="col-12 col-lg-3">
+                                    <small>
+                                        <b><i class="fa-solid fa-house-chimney"></i> EL-MAR s.c. Marczak Piotr Marczak Łukasz</b><br>
+                                        NIP 918-210-77-18<br>
+                                        Teodorówka Kolonia 17B<br>
+                                        23-440 Frampol<br>
+                                        woj. lubelskie
+                                        <br><br>
+
+                                        <b><i class="fa-solid fa-phone"></i> 669 875 700</b><br>
+                                        <b><i class="fa-solid fa-phone"></i> 505 119 935</b><br>
+                                        <a href="mailto:kontakt@el-marsc.pl" class="mail"><b><i class="fa-solid fa-envelope"></i> kontakt@el-marsc.pl</b></a>
+                                    </small>
+                                </div>
+                                <div class="col-12 col-lg-3">
+                                    <input type="text" name="imieNazwisko" class="mt-2" placeholder="*Imię i Nazwisko" maxlength="50">
+                                    <input type="text" name="email" class="mt-2" placeholder="*E-mail" maxlength="50">
+                                    <input type="text" name="telefon" class="mt-2" placeholder="Telefon" maxlength="25">
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <textarea name="wiadomosc" class="mt-2" placeholder="*Wiadomość"></textarea>
+                                    <button id="send" class="transition">Wyślij</button>
+                                    <div class="responses">
+                                        <div class="response text-danger d-inline-block"></div>
+                                        <div class="response text-success d-inline-block"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                
+
+
+                <%- include('./partials/footer') %>
+            </div>
+
+            
+        </div>
+
+        <script>
+             $(document).on("click", "#send", function () {
+                $.post("elements/ajax.php", {
+                    operation: "sendMail",
+                    imieNazwisko: $('input[name=imieNazwisko]').val(),
+                    email: $('input[name=email]').val(),
+                    telefon: $('input[name=telefon]').val(),
+                    wiadomosc: $('textarea[name=wiadomosc]').val()
+                }, function(data){
+                    $(".contact").html(data);
+                });
+            });
+        </script>
+
+        
+        <%- include('./partials/jsscripts') %>
+
+        <%- include('./partials/end') %>
+    </body>
+
+</html>

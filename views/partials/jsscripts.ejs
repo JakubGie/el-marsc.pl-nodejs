@@ -1,0 +1,17 @@
+<script>
+    function showMenu()
+    {
+        document.getElementsByClassName("nav-mobile")[0].style.opacity="1"; 
+        document.getElementsByClassName("nav-mobile")[0].style.height="auto"; 
+
+        document.getElementById("switch").innerHTML = '<i class="fa-solid fa-x" onclick="hideMenu()"></i>';
+    }
+ 
+    function hideMenu()
+    {
+        document.getElementsByClassName("nav-mobile")[0].style.opacity="0"; 
+        document.getElementsByClassName("nav-mobile")[0].style.height="0"; 
+        
+        document.getElementById("switch").innerHTML = '<i class="fa-solid fa-bars" onclick="showMenu()"></i>'; 
+    }
+</script>

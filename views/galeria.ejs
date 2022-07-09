@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+    <head>
+        <title><%- pageName %> - El-Mar S.C.</title>
+
+        <!-- Open Graph -->
+		<meta property="og:title" content="<%- pageName %>">
+		<meta property="og:url" content="https://el-marsc.pl/galeria">
+
+        <%- include('./partials/head') %>
+    </head>
+
+    <body>
+        <%- include('./partials/header') %>
+
+        <div class="position-relative">
+
+
+            <%- include('./partials/nav') %>
+            
+            
+            <div class="main w-100">
+                <main>
+                    <div class="h-back">
+                        <h1>
+                            <%- pageName %>
+                        </h1>
+                    </div>
+
+                    <div class="container">
+                        <div class="row my-3">
+                            <% for(i=1; i<=15; i++) { %>
+                                <div class="item col-sm-6 col-md-4 mb-3">
+                                    <a href="images/gallery/<%= i %>.jpg" class="fancybox" data-fancybox="gallery1">
+                                        <img src="images/gallery/<%= i %>.jpg" class="w-100">
+                                    </a>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                </main>
+
+
+                <%- include('./partials/footer') %>
+            </div>
+            
+
+        
+            
+        </div>
+
+
+
+        
+        <%- include('./partials/jsscripts') %>
+
+        <%- include('./partials/end') %>
+    </body>
+
+</html>

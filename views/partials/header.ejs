@@ -1,0 +1,72 @@
+<header>
+    <div class="header-bg">
+        <div class="container">
+            <div class="header row">
+                <div class="logo-nav col-12 col-lg-3">
+                    <a href="/">
+                        <img class="logo" src="images/ELEKTRYK EL-MAR-transparent.png" alt="Logo El-Mar">
+                    </a>
+                </div>
+
+                <div class="right-bar col-12 col-lg-9">
+
+                    <div class="element">
+                        <div class="icon d-inline-block transition">
+                            <i class="fa-solid fa-house-chimney"></i>
+                        </div>
+                        <div class="d-inline-block">
+                            <b>Teodorówka Kolonia 17B</b><br>
+                            <p>23-440 Frampol</p>
+                        </div>
+                    </div>
+                    <div class="element">
+                        <div class="icon d-inline-block transition">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="d-inline-block">
+                            <b>Telefon</b><br>
+                            <p>669 875 700</p>
+                        </div>
+                    </div>
+                    <div class="element">
+                        <div class="icon d-inline-block transition">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="d-inline-block">
+                            <b>E-mail</b><br>
+                            <p>kontakt@el-marsc.pl</p>
+                        </div>
+                    </div>
+                    <div class="socials d-inline-block">
+                        <a href="https://www.facebook.com/elmarscpl" target="_blank" class="d-inline-block transition">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="mobile">
+        <div id="switch" class="d-inline-block text-dark">
+            <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+        </div>
+
+        <div class="nav-mobile bg-light">
+            <a href="https://el-marsc.pl">Strona główna</a>
+            <hr class="small-hr">
+            <a href="<?php if(isset($not_def_dir)) echo "../"; ?>oferta">Oferta</a>
+            <hr class="small-hr">
+            <a href="<?php if(isset($not_def_dir)) echo "../"; ?>galeria">Galeria</a>
+            <hr class="small-hr">
+            <a href="<?php if(isset($not_def_dir)) echo "../"; ?>wynajem">Wynajem</a>
+            <hr class="small-hr">
+            <a href="<?php if(isset($not_def_dir)) echo "../"; ?>kontakt">Kontakt</a>
+            <hr class="small-hr">
+            <a href="sklep" class="text-yellow"><b><i class="fa-solid fa-basket-shopping"></i> Sklep</b></a>
+            <hr class="small-hr">
+            <a href="https://www.facebook.com/elmarscpl" target="_blank" style="color:#0d6efd"><b><i class="fa-brands fa-facebook-f"></i> Facebook</b></a>
+        </div>
+    </div>
+</header>
